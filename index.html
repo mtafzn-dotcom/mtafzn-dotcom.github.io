@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0,
+                 viewport-fit=cover">
+
+  <title>GOV.BR</title>
+
+  <!-- Ícones -->
+  <link rel="icon" type="image/png" href="./icone.png">
+  <link rel="apple-touch-icon"
+        sizes="180x180"
+        href="./apple-touch-icon.png">
+  <link rel="manifest" href="./manifest.json">
+
+  <meta name="theme-color" content="#ffffff">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style"
+        content="default">
+  <meta name="apple-mobile-web-app-title"
+        content="GOV.BR">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+    }
+
+    body {
+      background: #fff;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+
+    .splash {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .imagem-entrada {
+      position: relative;
+      width: 260px;
+      max-width: 100%;
+    }
+
+    .logo {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    /* Bolinha centralizada horizontalmente */
+    .loader-pos {
+      position: absolute;
+      top: 40%;
+      left: 49%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+    }
+
+    .loader {
+      width: 42px;
+      height: 42px;
+      border: 5px solid #e5e5e5;
+      border-top-color: #1351b4;
+      border-radius: 50%;
+      animation: girar 0.8s linear infinite;
+    }
+
+    @keyframes girar {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* Ajustes para celular */
+    @media (max-width: 767px) {
+      .splash {
+        width: 100vw;
+        height: 100vh;
+        height: 100dvh;
+      }
+
+      .imagem-entrada {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        max-width: none;
+        overflow: hidden;
+      }
+
+      .logo {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="splash">
+    <div class="imagem-entrada">
+      <img src="./entrada.jpg"
+           class="logo"
+           alt="BY~JG">
+
+      <div class="loader-pos">
+        <div class="loader"
+             role="status"
+             aria-label="Carregando"></div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    setTimeout(function () {
+      window.location.replace("./foto1.html");
+    }, 3000);
+  </script>
+</body>
+</html>
